@@ -56,4 +56,7 @@ form.addEventListener("submit", (event) => {
     outputNome.innerText = nome;
     outputOfferta.innerText = offerta;
     outputPrezzo.innerText = `${price.toFixed(2)} €`;
+
+    // Pulisco i campi del form dopo l'invio
+    form.reset();
 })
