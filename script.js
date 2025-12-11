@@ -13,6 +13,10 @@ const numKm = document.getElementById("km-user");
 const userAge = document.getElementById("eta-user");
 // Seleziono il form
 const form = document.querySelector('form');
+// Seleziono gli elementi della tabella
+const outputNome = document.getElementById("output-nome");
+const outputOfferta = document.getElementById("output-offerta");
+const outputPrezzo = document.getElementById("output-prezzo");
 
 // ELABORAZIONE
 form.addEventListener("submit", (event) => {
@@ -26,11 +30,16 @@ form.addEventListener("submit", (event) => {
     let offerta = "Tariffa Standard";
 
     // Se l'utente è minorenne, applico uno sconto del 20% al prezzo
-    if (eta < 18) {
+    if (eta === "minorenne") {
         price *= 0.8;
         offerta = "Sconto del 20% applicato per i minorenni";
-    } else if (eta > 65) { // Se l'utente è over 65, applico uno sconto del 40% al prezzo
+    } else if (eta === "over-65") { // Se l'utente è over 65, applico uno sconto del 40% al prezzo
         price *= 0.6;
         offerta = "Sconto del 40% applicato per gli over 65";
     }
+
+    // OUTPUT TABELLA
+    outputNome.innerText = nome;
+    outputOfferta.innerText = offerta;
+    outputPrezzo.innerText = `${price.toFixed(2)} €`;
 })
