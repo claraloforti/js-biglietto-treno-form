@@ -49,7 +49,7 @@ form.addEventListener("submit", (event) => {
     } else if (eta === "over-65") { // Se l'utente è over 65 (il value è over-65), applico uno sconto del 40% al prezzo
         price *= 0.6;
         offerta = "Sconto del 40% applicato per gli over 65";
-    } // altrimenti resta com'è, cioè il value è maggiorenne e price e offerta restano standard
+    } // altrimenti resta com'è, cioè il value è maggiorenne quindi price e offerta restano standard
 
     // Rendo la tabella visibile dopo il submit
     previewTable.classList.remove("d-none");
