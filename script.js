@@ -13,6 +13,8 @@ const numKm = document.getElementById("km-user");
 const userAge = document.getElementById("eta-user");
 // Seleziono il form
 const form = document.querySelector('form');
+// Seleziono bottone "Annulla"
+const btnAnnulla = document.getElementById("btn-annulla");
 // Seleziono gli elementi della tabella
 const outputNome = document.getElementById("output-nome");
 const outputOfferta = document.getElementById("output-offerta");
@@ -34,11 +36,11 @@ form.addEventListener("submit", (event) => {
     let offerta = "Tariffa Standard";
 
     // Se km non è un numero o è inferiore o uguale a 0 continua a chiederlo
-     if (isNaN(km) || km <= 0) {
+    if (isNaN(km) || km <= 0) {
         alert("Inserisci un numero valido di km");
         numKm.value = "";
         return;
-     }
+    }
 
     // Se l'utente è minorenne, applico uno sconto del 20% al prezzo
     if (eta === "minorenne") {
@@ -59,4 +61,10 @@ form.addEventListener("submit", (event) => {
 
     // Pulisco i campi del form dopo l'invio
     form.reset();
+})
+
+// Evento che svuota i campi e nasconde la tabella al click del bottone "Annulla"
+btnAnnulla.addEventListener("click", () => {
+    form.reset();
+    previewTable.classList.add("d-none");
 })
