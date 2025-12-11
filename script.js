@@ -27,11 +27,18 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const nome = nomeCognome.value.trim();
-    const km = parseFloat(numKm.value);
     const eta = userAge.value;
+    let km = parseFloat(numKm.value);
     // Dichiaro prezzo base e moltiplico il numero dei km per 0.21 per ottenerlo
     let price = km * 0.21;
     let offerta = "Tariffa Standard";
+
+    // Se km non è un numero o è inferiore o uguale a 0 continua a chiederlo
+     if (isNaN(km) || km <= 0) {
+        alert("Inserisci un numero valido di km");
+        numKm.value = "";
+        return;
+     }
 
     // Se l'utente è minorenne, applico uno sconto del 20% al prezzo
     if (eta === "minorenne") {
