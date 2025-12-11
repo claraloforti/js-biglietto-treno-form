@@ -8,35 +8,29 @@
 // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali). 
 
 // Seleziono gli elementi di input
-const nomeCognome = document.getElementById("nome");
-const kmDaPercorrere = document.getElementById("km");
-const etaPasseggero = document.getElementById("eta");
+const nomeCognome = document.getElementById("nome-user");
+const numKm = document.getElementById("km-user");
+const userAge = document.getElementById("eta-user");
 // Seleziono il form
 const form = document.querySelector('form');
-// Dichiaro prezzo e moltiplico il numero dei km per 0.21 per ottenerlo
-let price = numKm * 0.21;
 
 // ELABORAZIONE
-form.addEventListener("submit")
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
+    const nome = nomeCognome.value.trim();
+    const km = parseFloat(numKm.value);
+    const eta = userAge.value;
+    // Dichiaro prezzo base e moltiplico il numero dei km per 0.21 per ottenerlo
+    let price = km * 0.21;
+    let offerta = "Tariffa Standard";
 
-
-// Se l'utente è minorenne, applico uno sconto del 20% al prezzo
-if (userAge < 18) {
-    price *= 0.8;
-} else if (userAge > 65) { // Se l'utente è over 65, applico uno sconto del 40% al prezzo
-    price *= 0.6;
-}
-
-// OUTPUT
-document.getElementById("ticketprice").innerText = "Il prezzo del tuo biglietto è: " + price.toLocaleString("it-IT", { style: "currency", currency: "EUR" });
-
-
-
-
-
-
-
-// PER VERIFICARE:
-// 100km, 10 anni => prezzo corretto:  €16.80
-// 100km, 70 anni => prezzo corretto: €12.60
+    // Se l'utente è minorenne, applico uno sconto del 20% al prezzo
+    if (eta < 18) {
+        price *= 0.8;
+        offerta = "Sconto del 20% applicato per i minorenni";
+    } else if (eta > 65) { // Se l'utente è over 65, applico uno sconto del 40% al prezzo
+        price *= 0.6;
+        offerta = "Sconto del 40% applicato per gli over 65";
+    }
+})

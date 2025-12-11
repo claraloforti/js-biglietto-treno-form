@@ -21,21 +21,21 @@
                     <!-- Input Nome Cognome -->
                     <div class="col-4">
                         <label for="nome">Nome Cognome Passeggero</label>
-                        <input type="text" name="nome-cognome" class="form-control" id="nome"
+                        <input type="text" name="nome-cognome" class="form-control" id="nome-user"
                             placeholder="Inserisci nome e cognome">
                     </div>
                     <!-- Input Km -->
                     <div class="col-4">
                         <div class="mb-3">
                             <label for="cognome">Km da percorrere</label>
-                            <input type="text" name="km-percorrere" class="form-control" id="km"
+                            <input type="text" name="km-percorrere" class="form-control" id="km-user"
                                 placeholder="Inserisci il numero dei km">
                         </div>
                     </div>
                     <!-- Input Età-->
                     <div class="col-4">
                         <label for="eta">Fascia d'età</label>
-                        <select class="form-select" aria-label="Default select example" id="eta">
+                        <select class="form-select" aria-label="Default select example" id="eta-user">
                             <option selected disabled>Scegli l'età</option>
                             <option value="minorenne">0-17</option>
                             <option value="maggiorenne">18-65</option>
@@ -44,10 +44,30 @@
                     </div>
                 </div>
                 <div>
-                    <button id="button" class="btn btn-primary ">Genera</button>
-                    <button id="button" class="btn btn-danger ">Annulla</button>
+                    <button id="btn-genera" class="btn btn-primary ">Genera</button>
+                    <button id="btn-annulla" class="btn btn-danger ">Annulla</button>
                 </div>
             </form>
+            <div class="row mt-5 tuo-biglietto">
+                <h2>IL TUO BIGLIETTO</h2>
+                <!-- TABELLA -->
+                <table class="table table-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome Passeggero</th>
+                            <th scope="col">Offerta applicata</th>
+                            <th scope="col">Prezzo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="output-nome"></td>
+                            <td id="output-offerta"></td>
+                            <td id="output-prezzo"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </main>
     </div>
     <script src="script.js"></script>
