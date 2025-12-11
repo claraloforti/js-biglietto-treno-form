@@ -32,8 +32,8 @@ form.addEventListener("submit", (event) => {
     const eta = userAge.value;
     let km = parseFloat(numKm.value);
     // Dichiaro prezzo base e moltiplico il numero dei km per 0.21 per ottenerlo
-    let price = km * 0.21;
-    let offerta = "Tariffa Standard";
+    let price = km * 0.21; // prezzo standard 
+    let offerta = "Tariffa Standard"; // offerta standard
 
     // Se km non è un numero o è inferiore o uguale a 0 continua a chiederlo
     if (isNaN(km) || km <= 0) {
@@ -43,13 +43,13 @@ form.addEventListener("submit", (event) => {
     }
 
     // Se l'utente è minorenne, applico uno sconto del 20% al prezzo
-    if (eta === "minorenne") {
+    if (eta === "minorenne") { // se il value è minorenne
         price *= 0.8;
         offerta = "Sconto del 20% applicato per i minorenni";
-    } else if (eta === "over-65") { // Se l'utente è over 65, applico uno sconto del 40% al prezzo
+    } else if (eta === "over-65") { // Se l'utente è over 65 (il value è over-65), applico uno sconto del 40% al prezzo
         price *= 0.6;
         offerta = "Sconto del 40% applicato per gli over 65";
-    }
+    } // altrimenti resta com'è, cioè il value è maggiorenne e price e offerta restano standard
 
     // Rendo la tabella visibile dopo il submit
     previewTable.classList.remove("d-none");
