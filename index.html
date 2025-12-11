@@ -15,32 +15,39 @@
             <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
         </header>
         <main>
-            <div class="row">
-                <!-- Input Nome Cognome -->
-                <div class="col-4">
-                    <label for="nome">Nome Cognome Passeggero</label>
-                    <input type="text" name="nome-cognome" class="form-control" id="nome"
-                        placeholder="Inserisci nome e cognome">
-                </div>
-                <!-- Input Km -->
-                <div class="col-4">
-                    <div class="mb-3">
-                        <label for="cognome">Km da percorrere</label>
-                        <input type="text" name="km-percorrere" class="form-control" id="km"
-                            placeholder="Inserisci il numero dei km">
+            <!-- Aggiungo form -->
+            <form action="">
+                <div class="row">
+                    <!-- Input Nome Cognome -->
+                    <div class="col-4">
+                        <label for="nome">Nome Cognome Passeggero</label>
+                        <input type="text" name="nome-cognome" class="form-control" id="nome"
+                            placeholder="Inserisci nome e cognome">
                     </div>
-                </div>
-                <!-- Input Età-->
-                <div class="col-4">
+                    <!-- Input Km -->
+                    <div class="col-4">
+                        <div class="mb-3">
+                            <label for="cognome">Km da percorrere</label>
+                            <input type="text" name="km-percorrere" class="form-control" id="km"
+                                placeholder="Inserisci il numero dei km">
+                        </div>
+                    </div>
+                    <!-- Input Età-->
+                    <div class="col-4">
                         <label for="eta">Fascia d'età</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected disabled>Scegli</option>
+                        <select class="form-select" aria-label="Default select example" id="eta">
+                            <option selected disabled>Scegli l'età</option>
                             <option value="minorenne">0-17</option>
                             <option value="maggiorenne">18-65</option>
                             <option value="over-65">>65</option>
                         </select>
                     </div>
-            </div>
+                </div>
+                <div>
+                    <button id="button" class="btn btn-primary ">Genera</button>
+                    <button id="button" class="btn btn-danger ">Annulla</button>
+                </div>
+            </form>
         </main>
     </div>
     <script src="script.js"></script>

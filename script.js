@@ -7,22 +7,20 @@
 // Va applicato uno sconto del 40% per gli over 65.
 // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali). 
 
-
-
-// INPUT
-// Chiedo a User numero km 
-// const numKm = parseFloat(prompt("Scrivi il numero di chilometri che vuoi percorrere"));
-
-// Chiedo a User età
-// const userAge = parseInt(prompt("Scrivi l'età del passeggero"));
-console.log(numKm, userAge);
-
-
-// SETUP
+// Seleziono gli elementi di input
+const nomeCognome = document.getElementById("nome");
+const kmDaPercorrere = document.getElementById("km");
+const etaPasseggero = document.getElementById("eta");
+// Seleziono il form
+const form = document.querySelector('form');
 // Dichiaro prezzo e moltiplico il numero dei km per 0.21 per ottenerlo
 let price = numKm * 0.21;
 
 // ELABORAZIONE
+form.addEventListener("submit")
+
+
+
 // Se l'utente è minorenne, applico uno sconto del 20% al prezzo
 if (userAge < 18) {
     price *= 0.8;
