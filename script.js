@@ -18,6 +18,10 @@ const outputNome = document.getElementById("output-nome");
 const outputOfferta = document.getElementById("output-offerta");
 const outputPrezzo = document.getElementById("output-prezzo");
 
+// Gestisco visibilità iniziale della tabella
+const previewTable = document.querySelector(".tuo-biglietto");
+previewTable.classList.add("d-none");
+
 // ELABORAZIONE
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -37,6 +41,9 @@ form.addEventListener("submit", (event) => {
         price *= 0.6;
         offerta = "Sconto del 40% applicato per gli over 65";
     }
+
+    // Rendo la tabella visibile dopo il submit
+    previewTable.classList.remove("d-none");
 
     // OUTPUT TABELLA
     outputNome.innerText = nome;
